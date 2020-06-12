@@ -18,7 +18,7 @@ function getRandomAge() {
 }
 
 function getChildFree() {
-  const index = selfRandom(0, 10);
+  const index = selfRandom(0, 12);
   if (index > 2) {
     return childFree[1];
   } else {
