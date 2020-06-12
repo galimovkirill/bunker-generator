@@ -7,6 +7,7 @@ function getRandomPerson() {
     sex: getRandomSex(),
     age: getRandomAge(),
     childFree: getChildFree(),
+    orientation: getRandomOrientation(),
     job: getRandomJob(),
     health: getRandomHealth(),
     character: getRandomCharacter(),
@@ -27,13 +28,14 @@ function buildFile(person) {
 
   strings.push(`
     1) Общие данные: ${item.sex}, ${item.age}, ${item.childFree} \r\n
-    2) Профессия: ${item.job} \r\n
-    3) Состояние здоровья: ${item.health} \r\n
-    4) Человеческая черта: ${item.character} \r\n
-    5) Хобби: ${item.hobby} \r\n
-    6) Фобия: ${item.phobia} \r\n
-    7) Багаж: ${item.baggage} \r\n
-    8) Дополнительная информация: ${item.additional} \r\n\r\n
+    2) Сексуальная ориентация: ${item.orientation} \r\n
+    3) Профессия: ${item.job} \r\n
+    4) Состояние здоровья: ${item.health} \r\n
+    5) Человеческая черта: ${item.character} \r\n
+    6) Хобби: ${item.hobby} \r\n
+    7) Фобия: ${item.phobia} \r\n
+    8) Багаж: ${item.baggage} \r\n
+    9) Дополнительная информация: ${item.additional} \r\n\r\n
 
     Карты действия: \r\n
     1) ${item.action_1} \r\n
@@ -60,15 +62,14 @@ function downloadFile(blob, fileName) {
 }
 
 // Form
-
 const counterInput = document.querySelector("#count_characters");
-
 const downloadBtn = document.querySelector("#download-btn");
+
 downloadBtn.addEventListener("click", (e) => {
-  const filesCount = +counterInput.value;
   e.preventDefault();
+  const filesCount = +counterInput.value;
   for (let i = 0; i < filesCount; i++) {
     const blob = buildFile(getRandomPerson);
-    downloadFile(blob, `Бункер${i}.txt`);
+    downloadFile(blob, `Бункер_${i}.txt`);
   }
 });

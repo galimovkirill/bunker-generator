@@ -81,3 +81,33 @@ function getRandomAction() {
   actionList.splice(index, 1);
   return randomAction;
 }
+
+function getRandomOrientation() {
+  const index = selfRandom(1, 100);
+  if (index < 2) {
+    return orientationList[1];
+  }
+  if (index >= 2 && index < 4) {
+    return orientationList[2];
+  }
+  if (index >= 4 && index < 6) {
+    return orientationList[3];
+  }
+  if (index >= 6 && index < 8) {
+    return orientationList[4];
+  }
+  if (index >= 8 && index < 10) {
+    return orientationList[5];
+  } else {
+    return orientationList[0];
+  }
+}
+
+// function getChildFree() {
+//   const index = selfRandom(0, 10);
+//   if (index > 2) {
+//     return childFree[1];
+//   } else {
+//     return childFree[0];
+//   }
+// }
