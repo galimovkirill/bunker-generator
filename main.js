@@ -30,7 +30,7 @@ function buildFile(person) {
     1) Общие данные: ${item.sex}, ${item.age}, ${item.childFree}, ${item.orientation} \r\n
     2) Профессия: ${item.job} \r\n
     3) Состояние здоровья: ${item.health} \r\n
-    4) Человеческая черта: ${item.character} \r\n
+    4) Черта характера: ${item.character} \r\n
     5) Хобби: ${item.hobby} \r\n
     6) Фобия: ${item.phobia} \r\n
     7) Багаж: ${item.baggage} \r\n

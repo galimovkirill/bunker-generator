@@ -19,7 +19,7 @@ function getRandomAge() {
 
 function getChildFree() {
   const index = selfRandom(1, 100);
-  if (index > 5) {
+  if (index > 7) {
     return childFree[1];
   } else {
     return childFree[0];
