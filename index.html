@@ -3,9 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Бункер - генерация персонажей онлайн</title>
   </head>
   <body>
+    <main class="main">
+      <div class="container">
+        <form class="generating-form">
+          <label for="count_characters"></label>
+          <input
+            class="form_input"
+            id="count_characters"
+            type="number"
+            placeholder="Введите количество персонажей"
+          />
+          <button id="download-btn">Генерировать</button>
+        </form>
+      </div>
+    </main>
+
     <script src="database/action_db.js"></script>
     <script src="database/additional_db.js"></script>
     <script src="database/baggage_db.js"></script>
@@ -14,6 +29,7 @@
     <script src="database/hobby_db.js"></script>
     <script src="database/job_db.js"></script>
     <script src="database/phobia_db.js"></script>
+    <script src="getters.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
