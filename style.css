@@ -1,0 +1,33 @@
+body,
+html,
+* {
+  font-family: "Montserrat", sans-serif;
+  outline: none;
+}
+
+.container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.generating-form {
+}
+
+.generating-form label {
+  display: block;
+  font-size: 12px;
+}
+
+#count_characters {
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+#download-btn {
+  display: block;
+  border: none;
+  background: #40cf66;
+  color: #fff;
+  padding: 10px;
+}
