@@ -15,16 +15,14 @@ function getRandomPerson() {
     action_2: getRandomAction(),
   };
 
-  const checkbox = document.querySelectorAll(".form_row__checkbox input");
-  checkbox.forEach((item) => {
-    item.disabled = true;
-    // if (!item.checked) {
-    //   let id = item.id;
-    //   person[id] = null;
-    // }
-  });
-
-  console.log(person);
+  // const checkbox = document.querySelectorAll(".form_row__checkbox input");
+  // checkbox.forEach((item) => {
+  //   item.disabled = true;
+  //   // if (!item.checked) {
+  //   //   let id = item.id;
+  //   //   person[id] = null;
+  //   // }
+  // });
 
   return person;
 }
@@ -54,19 +52,39 @@ function getRandomPerson() {
 
 // Form Person
 (function () {
-  const personCounter = document.querySelector("#generation_persons__count");
-  const downloadPersonsBtn = document.querySelector(
-    "#generation_persons_download"
-  );
+  const COUNTER = document.querySelector("#generation_persons__count");
+  const DOWNLOAD_BTN = document.querySelector("#generation_persons_download");
 
-  downloadPersonsBtn.addEventListener("click", (e) => {
+  DOWNLOAD_BTN.addEventListener("click", (e) => {
     e.preventDefault();
-    const filesCount = +personCounter.value;
-    for (let i = 0; i < filesCount; i++) {
-      const blob = buildFile(getRandomPerson);
-      downloadFile(blob, `Бункер_${i}.txt`);
+    const FILES_COUNT = +COUNTER.value;
+    for (let i = 0; i < FILES_COUNT; i++) {
+      let CONTENT = setContent(getRandomPerson);
+      downloadFile(`Бункер_${i}.txt`, CONTENT);
     }
   });
 })();
 
 // Form Characters
+(function () {
+  const COUNTER = document.querySelector("#generation_characters__count");
+  const SELECT = document.querySelector("#generation_characters__select");
+  const DOWNLOAD_BTN = document.querySelector(
+    "#generation_characters_download"
+  );
+
+  DOWNLOAD_BTN.addEventListener("click", (e) => {
+    const FILES_COUNT = COUNTER.value;
+
+    for (let i = 0; i < FILES_COUNT; i++) {
+      const PERSON = getRandomPerson();
+      const CHARACTER_TYPE = SELECT[SELECT.selectedIndex].text;
+      const NEW_CHARACTER = PERSON[SELECT.value];
+
+      downloadFile(
+        `Характеристика_${i}`,
+        `Ваша новая характеристика «${CHARACTER_TYPE.toUpperCase()}» - ${NEW_CHARACTER}`
+      );
+    }
+  });
+})();
