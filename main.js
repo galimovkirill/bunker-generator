@@ -58,6 +58,7 @@ function getRandomPerson() {
   DOWNLOAD_BTN.addEventListener("click", (e) => {
     e.preventDefault();
     const FILES_COUNT = +COUNTER.value;
+
     for (let i = 0; i < FILES_COUNT; i++) {
       let CONTENT = setContent(getRandomPerson);
       downloadFile(`Бункер_${i}.txt`, CONTENT);
@@ -74,6 +75,7 @@ function getRandomPerson() {
   );
 
   DOWNLOAD_BTN.addEventListener("click", (e) => {
+    e.preventDefault();
     const FILES_COUNT = COUNTER.value;
 
     for (let i = 0; i < FILES_COUNT; i++) {
