@@ -1,3 +1,7 @@
+const sexList = ["Мужчина", "Женщина"];
+const ageList = Math.random();
+const childFree = ["CHILD FREE", "NOT CHILD FREE"];
+
 function selfRandom(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -102,12 +106,3 @@ function getRandomOrientation() {
     return orientationList[0];
   }
 }
-
-// function getChildFree() {
-//   const index = selfRandom(0, 10);
-//   if (index > 2) {
-//     return childFree[1];
-//   } else {
-//     return childFree[0];
-//   }
-// }

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Бункер - генерация персонажей онлайн</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <div class="inner">
+          <div class="links">
+            <a class="tab-link" data-tab="1" href="#"
+              >Сгенерировать персонажей</a
+            >
+            <a class="tab-link" data-tab="2" href="#"
+              >Сгенерировать характеристику</a
+            >
+          </div>
+          <div class="tabs">
+            <div
+              data-tab="1"
+              class="tabs_generate tabs_generate__person shown"
+              style="display: none;"
+            >
+              <form class="generating-form">
+                <div class="form_container">
+                  <div class="form_input">
+                    <label for="count_persons"
+                      >Количество генерируемых персонажей</label
+                    >
+                    <input id="count_persons" type="number" value="1" />
+                  </div>
+                  <div class="form_row">
+                    <div class="form_row__checkbox">
+                      <input type="checkbox" id="sex" name="Sex" checked />
+                      <label for="sex">Пол</label>
+                    </div>
+                    <div class="form_row__checkbox">
+                      <input type="checkbox" id="age" name="Age" checked />
+                      <label for="age">Возраст</label>
+                    </div>
+                    <div class="form_row__checkbox">
+                      <input
+                        type="checkbox"
+                        id="childFree"
+                        name="Child Free"
+                        checked
+                      />
+                      <label for="childFree">Child Free</label>
+                    </div>
+                    <div class="form_row__checkbox">
+                      <input
+                        type="checkbox"
+                        id="orientation"
+                        name="Orientation"
+                        checked
+                      />
+                      <label for="orientation">Сексуальная ориентация</label>
+                    </div>
+                    <div class="form_row__checkbox">
+                      <input type="checkbox" id="job" name="Job" checked />
+                      <label for="job">Профессия</label>
+                    </div>
+                    <div class="form_row__checkbox">
+                      <input
+                        type="checkbox"
+                        id="health"
+                        name="Health"
+                        checked
+                      />
+                      <label for="health">Состояние здоровья</label>
+                    </div>
+                    <div class="form_row__checkbox">
+                      <input
+                        type="checkbox"
+                        id="character"
+                        name="Character"
+                        checked
+                      />
+                      <label for="character">Черты характера</label>
+                    </div>
+                    <div class="form_row__checkbox">
+                      <input type="checkbox" id="hobby" name="Hobby" checked />
+                      <label for="hobby">Хобби</label>
+                    </div>
+                    <div class="form_row__checkbox">
+                      <input
+                        type="checkbox"
+                        id="phobia"
+                        name="phobia"
+                        checked
+                      />
+                      <label for="phobia">Фобия</label>
+                    </div>
+                    <div class="form_row__checkbox">
+                      <input
+                        type="checkbox"
+                        id="baggage"
+                        name="baggage"
+                        checked
+                      />
+                      <label for="baggage">Багаж</label>
+                    </div>
+                    <div class="form_row__checkbox">
+                      <input
+                        type="checkbox"
+                        id="additional"
+                        name="additional"
+                        checked
+                      />
+                      <label for="additional">Дополнительная информация</label>
+                    </div>
+                    <div class="form_row__checkbox">
+                      <input
+                        type="checkbox"
+                        id="action_1"
+                        name="action_1"
+                        checked
+                      />
+                      <label for="action_1">Карточка действия 1</label>
+                    </div>
+                    <div class="form_row__checkbox">
+                      <input
+                        type="checkbox"
+                        id="action_2"
+                        name="action_2"
+                        checked
+                      />
+                      <label for="action_2">Карточка действия 2</label>
+                    </div>
+                  </div>
+                  <button id="persons_download-btn">Генерировать</button>
+                </div>
+              </form>
+            </div>
+            <div
+              data-tab="2"
+              class="tabs_generate tabs_generate__character"
+              style="display: none;"
+            >
+              <form class="generating-form">
+                <div class="form_container">
+                  <div class="form_input">
+                    <label for="count_persons"
+                      >Количество генерируемых персонажей</label
+                    >
+                    <input id="count_persons" type="number" value="1" />
+                  </div>
+                  <div class="form_input">
+                    <label for="count_persons"
+                      >Сгенерировать характеристику</label
+                    >
+                    <select name="" id="">
+                      <option value="">Пол</option>
+                      <option value="">Возраст</option>
+                      <option value="">Профессия</option>
+                    </select>
+                  </div>
+                  <button id="persons_download-btn">Генерировать</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="database/action_db.js"></script>
+    <script src="database/additional_db.js"></script>
+    <script src="database/baggage_db.js"></script>
+    <script src="database/character_db.js"></script>
+    <script src="database/health_db.js"></script>
+    <script src="database/hobby_db.js"></script>
+    <script src="database/job_db.js"></script>
+    <script src="database/phobia_db.js"></script>
+    <script src="database/orientation_db.js"></script>
+    <script src="getters.js"></script>
+    <script src="download-file.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

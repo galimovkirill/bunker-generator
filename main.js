@@ -1,7 +1,3 @@
-const sexList = ["Мужчина", "Женщина"];
-const ageList = Math.random();
-const childFree = ["CHILD FREE", "NOT CHILD FREE"];
-
 function getRandomPerson() {
   const person = {
     sex: getRandomSex(),
@@ -19,56 +15,58 @@ function getRandomPerson() {
     action_2: getRandomAction(),
   };
 
+  const checkbox = document.querySelectorAll(".form_row__checkbox input");
+  checkbox.forEach((item) => {
+    item.disabled = true;
+    // if (!item.checked) {
+    //   let id = item.id;
+    //   person[id] = null;
+    // }
+  });
+
+  console.log(person);
+
   return person;
 }
 
-function buildFile(person) {
-  const strings = [];
-  const item = person();
+// Tabs switcher
+(function () {
+  const tabLinks = document.querySelectorAll(".generation_links__item");
+  const tabItems = document.querySelectorAll(".generation_tabs__item");
+  tabLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
 
-  strings.push(`
-    1) Общие данные: ${item.sex}, ${item.age}, ${item.childFree}, ${item.orientation} \r\n
-    2) Профессия: ${item.job} \r\n
-    3) Состояние здоровья: ${item.health} \r\n
-    4) Черта характера: ${item.character} \r\n
-    5) Хобби: ${item.hobby} \r\n
-    6) Фобия: ${item.phobia} \r\n
-    7) Багаж: ${item.baggage} \r\n
-    8) Дополнительная информация: ${item.additional} \r\n\r\n
+      tabLinks.forEach((item) => {
+        item.classList.remove("active-link");
+      });
+      link.classList.add("active-link");
 
-    Карты действия: \r\n
-    1) ${item.action_1} \r\n
-    2) ${item.action_2} \r\n
-  `);
+      tabItems.forEach((tab) => {
+        tab.classList.remove("shown");
+        if (tab.dataset.tab === e.target.dataset.tab) {
+          tab.classList.add("shown");
+        }
+      });
+    });
+  });
+})();
 
-  return new Blob([strings.join("\n")], { type: "text/plain" });
-}
+// Form Person
+(function () {
+  const personCounter = document.querySelector("#generation_persons__count");
+  const downloadPersonsBtn = document.querySelector(
+    "#generation_persons_download"
+  );
 
-function downloadFile(blob, fileName) {
-  const url = URL.createObjectURL(blob);
+  downloadPersonsBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const filesCount = +personCounter.value;
+    for (let i = 0; i < filesCount; i++) {
+      const blob = buildFile(getRandomPerson);
+      downloadFile(blob, `Бункер_${i}.txt`);
+    }
+  });
+})();
 
-  const a = document.createElement("a");
-  a.style = "display: none";
-  a.href = url;
-  a.download = fileName;
-
-  document.body.appendChild(a);
-
-  a.click();
-  a.remove();
-
-  URL.revokeObjectURL(url);
-}
-
-// Form
-const counterInput = document.querySelector("#count_characters");
-const downloadBtn = document.querySelector("#download-btn");
-
-downloadBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  const filesCount = +counterInput.value;
-  for (let i = 0; i < filesCount; i++) {
-    const blob = buildFile(getRandomPerson);
-    downloadFile(blob, `Бункер_${i}.txt`);
-  }
-});
+// Form Characters

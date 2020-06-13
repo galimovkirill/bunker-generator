@@ -13,13 +13,215 @@
   <body>
     <main class="main">
       <div class="container">
-        <form class="generating-form">
-          <label for="count_characters"
-            >Количество генерируемых персонажей</label
-          >
-          <input class="form_input" id="count_characters" type="number" />
-          <button id="download-btn">Генерировать</button>
-        </form>
+        <div class="inner">
+          <div class="generation_block">
+            <div class="generation_links">
+              <a
+                class="generation_links__item active-link"
+                data-tab="1"
+                href="#"
+                >Сгенерировать персонажей</a
+              >
+              <a class="generation_links__item" data-tab="2" href="#"
+                >Сгенерировать характеристику</a
+              >
+            </div>
+
+            <div class="generation_tabs">
+              <div
+                class="generation_tabs__item generation_tabs__person shown"
+                data-tab="1"
+                style="display: none;"
+              >
+                <form class="generation_form">
+                  <div class="form_container">
+                    <div class="form_input">
+                      <label for="generation_persons__count"
+                        >Количество генерируемых персонажей</label
+                      >
+                      <input
+                        class="form_input__item"
+                        id="generation_persons__count"
+                        type="number"
+                        value="1"
+                      />
+                    </div>
+                    <div class="form_row">
+                      <div class="form_row__checkbox">
+                        <input type="checkbox" id="sex" name="Sex" checked />
+                        <label for="sex">Пол</label>
+                      </div>
+                      <div class="form_row__checkbox">
+                        <input type="checkbox" id="age" name="Age" checked />
+                        <label for="age">Возраст</label>
+                      </div>
+                      <div class="form_row__checkbox">
+                        <input
+                          type="checkbox"
+                          id="childFree"
+                          name="Child Free"
+                          checked
+                        />
+                        <label for="childFree">Child Free</label>
+                      </div>
+                      <div class="form_row__checkbox">
+                        <input
+                          type="checkbox"
+                          id="orientation"
+                          name="Orientation"
+                          checked
+                        />
+                        <label for="orientation">Сексуальная ориентация</label>
+                      </div>
+                      <div class="form_row__checkbox">
+                        <input type="checkbox" id="job" name="Job" checked />
+                        <label for="job">Профессия</label>
+                      </div>
+                      <div class="form_row__checkbox">
+                        <input
+                          type="checkbox"
+                          id="health"
+                          name="Health"
+                          checked
+                        />
+                        <label for="health">Состояние здоровья</label>
+                      </div>
+                      <div class="form_row__checkbox">
+                        <input
+                          type="checkbox"
+                          id="character"
+                          name="Character"
+                          checked
+                        />
+                        <label for="character">Черты характера</label>
+                      </div>
+                      <div class="form_row__checkbox">
+                        <input
+                          type="checkbox"
+                          id="hobby"
+                          name="Hobby"
+                          checked
+                        />
+                        <label for="hobby">Хобби</label>
+                      </div>
+                      <div class="form_row__checkbox">
+                        <input
+                          type="checkbox"
+                          id="phobia"
+                          name="phobia"
+                          checked
+                        />
+                        <label for="phobia">Фобия</label>
+                      </div>
+                      <div class="form_row__checkbox">
+                        <input
+                          type="checkbox"
+                          id="baggage"
+                          name="baggage"
+                          checked
+                        />
+                        <label for="baggage">Багаж</label>
+                      </div>
+                      <div class="form_row__checkbox">
+                        <input
+                          type="checkbox"
+                          id="additional"
+                          name="additional"
+                          checked
+                        />
+                        <label for="additional"
+                          >Дополнительная информация</label
+                        >
+                      </div>
+                      <div class="form_row__checkbox">
+                        <input
+                          type="checkbox"
+                          id="action_1"
+                          name="action_1"
+                          checked
+                        />
+                        <label for="action_1">Карточка действия 1</label>
+                      </div>
+                      <div class="form_row__checkbox">
+                        <input
+                          type="checkbox"
+                          id="action_2"
+                          name="action_2"
+                          checked
+                        />
+                        <label for="action_2">Карточка действия 2</label>
+                      </div>
+                    </div>
+                    <button
+                      class="download_btn"
+                      id="generation_persons_download"
+                    >
+                      Генерировать
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <div
+                class="generation_tabs__item generation_tabs__characters"
+                data-tab="2"
+                style="display: none;"
+              >
+                <form class="generation_form">
+                  <div class="form_container">
+                    <div class="form_input">
+                      <label for="generation_characters__count"
+                        >Количество генерируемых характеристик</label
+                      >
+                      <input
+                        class="form_input__item"
+                        id="generation_characters__count"
+                        type="number"
+                        value="1"
+                      />
+                    </div>
+                    <div class="form_input">
+                      <label for="generation_characters__select"
+                        >Генерируемая характеристика</label
+                      >
+                      <select id="generation_characters__select">
+                        <option value="sex">Пол</option>
+                        <option value="age">Возраст</option>
+                        <option value="childFree">Child Free</option>
+                        <option value="orientation"
+                          >Сексуальная ориентация</option
+                        >
+                        <option value="job">Профессия</option>
+                        <option value="health">Состояние здоровья</option>
+                        <option value="character">Черты характера</option>
+                        <option value="hobby">Хобби</option>
+                        <option value="phobia">Фобия</option>
+                        <option value="baggage">Багаж</option>
+                        <option value="additional"
+                          >Дополнительная информация</option
+                        >
+                        <!-- <option value="sex">Пол</option>
+                        <option value="sex">Пол</option> -->
+                      </select>
+                      <!-- <input
+                        class="form_input__item"
+                        id="generation_characters__count"
+                        type="number"
+                        value="1"
+                      /> -->
+                    </div>
+                    <button
+                      class="download_btn"
+                      id="generation_characters_download"
+                    >
+                      Генерировать
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
@@ -33,6 +235,7 @@
     <script src="database/phobia_db.js"></script>
     <script src="database/orientation_db.js"></script>
     <script src="getters.js"></script>
+    <script src="download-file.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
