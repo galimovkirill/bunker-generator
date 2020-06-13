@@ -106,6 +106,7 @@ function getRandomPerson() {
     e.preventDefault();
     const PARAGRAPH = document.querySelector(".bunker_info");
     const STORY = getRandomStory();
+    const DESTROYED = selfRandom(1, 100);
     const DURATION = getRandomStayDuration();
     const SURVIVORS = getRandomSurvivors();
     const AREA = getRandomArea();
@@ -115,6 +116,7 @@ function getRandomPerson() {
     const BAGGAGE_2 = getRandomBaggage();
 
     PARAGRAPH.innerHTML = `<b>СЮЖЕТ</b> <br> ${STORY} <br>`;
+    PARAGRAPH.innerHTML += `<b>Разрушенная площадь Земли:</b> ${DESTROYED}% <br>`;
     PARAGRAPH.innerHTML += `<b>Длительность пребывания в бункере: </b> ${DURATION} <br>`;
     PARAGRAPH.innerHTML += `<b>Выжившие люди: </b> ${SURVIVORS} <br>`;
     PARAGRAPH.innerHTML += `<b>Площадь бункера: </b> ${AREA} кв.м. <br>`;

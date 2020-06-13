@@ -23,7 +23,7 @@ function getRandomAge() {
 function getChildFree() {
   const childFree = ["Childfree", "Не Childfree"];
   const index = selfRandom(1, 100);
-  if (index > 7) {
+  if (index > 10) {
     return childFree[1];
   } else {
     return childFree[0];
