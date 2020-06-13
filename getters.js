@@ -1,6 +1,6 @@
 const sexList = ["Мужчина", "Женщина"];
 const ageList = Math.random();
-const childFree = ["CHILD FREE", "NOT CHILD FREE"];
+const childFree = ["Childfree", "Не Childfree"];
 
 function selfRandom(min, max) {
   min = Math.ceil(min);

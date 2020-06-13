@@ -15,15 +15,6 @@ function getRandomPerson() {
     action_2: getRandomAction(),
   };
 
-  // const checkbox = document.querySelectorAll(".form_row__checkbox input");
-  // checkbox.forEach((item) => {
-  //   item.disabled = true;
-  //   // if (!item.checked) {
-  //   //   let id = item.id;
-  //   //   person[id] = null;
-  //   // }
-  // });
-
   return person;
 }
 
