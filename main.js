@@ -21,9 +21,16 @@ function getRandomPerson() {
         this.age = `${this.age} (шанс рождаемости ${TOTAL_RATE}%)`;
       }
     },
+
+    getHealthRate: function () {
+      if (this.health !== "Полностью здоров") {
+        this.health = `${this.health} (Тяжесть: ${selfRandom(1, 100)}%)`;
+      }
+    },
   };
 
   person.getRateForWomen();
+  person.getHealthRate();
 
   return person;
 }
