@@ -13,7 +13,17 @@ function getRandomPerson() {
     additional: getRandomAdditional(),
     action_1: getRandomAction(),
     action_2: getRandomAction(),
+
+    getRateForWomen: function () {
+      if (this.sex === "Женщина" && this.age >= 45 && this.age <= 50) {
+        const RANDOM_RATE = selfRandom(0, 75);
+        const TOTAL_RATE = (RANDOM_RATE * (100 - this.age) * 1.5) / 100;
+        this.age = `${this.age} (шанс рождаемости ${TOTAL_RATE}%)`;
+      }
+    },
   };
+
+  person.getRateForWomen();
 
   return person;
 }
