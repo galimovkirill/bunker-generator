@@ -81,3 +81,27 @@ function getRandomPerson() {
     }
   });
 })();
+
+// Form Bunker
+(function () {
+  const GENERATE_BTN = document.querySelector("#generation_bunker");
+  GENERATE_BTN.addEventListener("click", (e) => {
+    e.preventDefault();
+    const PARAGRAPH = document.querySelector(".bunker_info");
+    const STORY = getRandomStory();
+    const DURATION = getRandomStayDuration();
+    const SURVIVORS = getRandomSurvivors();
+    const AREA = getRandomArea();
+    const ROOM_1 = getRandomRoom();
+    const ROOM_2 = getRandomRoom();
+    const BAGGAGE_1 = getRandomBaggage();
+    const BAGGAGE_2 = getRandomBaggage();
+
+    PARAGRAPH.innerHTML = `<b>СЮЖЕТ</b> <br> ${STORY} <br>`;
+    PARAGRAPH.innerHTML += `<b>Длительность пребывания в бункере: </b> ${DURATION} <br>`;
+    PARAGRAPH.innerHTML += `<b>Выжившие люди: </b> ${SURVIVORS} <br>`;
+    PARAGRAPH.innerHTML += `<b>Площадь бункера: </b> ${AREA} кв.м. <br>`;
+    PARAGRAPH.innerHTML += `<b>Комнаты в бункере:</b> ${ROOM_1}, ${ROOM_2} <br>`;
+    PARAGRAPH.innerHTML += `<b>В бункере вы также нашли:</b> ${BAGGAGE_1}, ${BAGGAGE_2} <br>`;
+  });
+})();

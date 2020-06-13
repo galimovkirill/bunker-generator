@@ -82,6 +82,11 @@ html,
   background-color: #2b9e49;
 }
 
+.bunker_info {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .form_input {
   display: flex;
   align-items: center;

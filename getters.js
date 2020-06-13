@@ -1,6 +1,4 @@
-const sexList = ["Мужчина", "Женщина"];
-const ageList = Math.random();
-const childFree = ["Childfree", "Не Childfree"];
+// const ageList = Math.random();
 
 function selfRandom(min, max) {
   min = Math.ceil(min);
@@ -9,6 +7,7 @@ function selfRandom(min, max) {
 }
 
 function getRandomSex() {
+  const sexList = ["Мужчина", "Женщина"];
   const index = selfRandom(0, 1);
   return sexList[index];
 }
@@ -22,6 +21,7 @@ function getRandomAge() {
 }
 
 function getChildFree() {
+  const childFree = ["Childfree", "Не Childfree"];
   const index = selfRandom(1, 100);
   if (index > 7) {
     return childFree[1];
@@ -105,4 +105,61 @@ function getRandomOrientation() {
   } else {
     return orientationList[0];
   }
+}
+
+// Генерация бункера
+
+function getRandomStory() {
+  const index = selfRandom(0, storyList.length - 1);
+  const randomStory = storyList[index];
+  storyList.splice(index, 1);
+  return randomStory;
+}
+
+function getRandomStayDuration() {
+  const durationList = [
+    "Один месяц",
+    "Два месяца",
+    "Три месяца",
+    "Пол года",
+    "Один год",
+    "Два года",
+    "Три года",
+    "Пять лет",
+    "Десять лет",
+    "Жизнь вне бункер невозможна",
+  ];
+
+  const index = selfRandom(0, durationList.length - 1);
+  const randomDuration = durationList[index];
+  durationList.splice(index, 1);
+  return randomDuration;
+}
+
+function getRandomSurvivors() {
+  const survivorsList = [];
+  for (let i = 1; i <= 60; i++) {
+    if (i % 5 === 0) {
+      survivorsList.push(i + "%");
+    }
+  }
+  survivorsList.push("0% (только люди живущие в бункерах)");
+
+  const index = selfRandom(0, survivorsList.length - 1);
+  const randomSurvivors = survivorsList[index];
+  survivorsList.splice(index, 1);
+
+  return randomSurvivors;
+}
+
+function getRandomArea() {
+  const area = selfRandom(30, 250);
+  return area;
+}
+
+function getRandomRoom() {
+  const index = selfRandom(0, roomList.length - 1);
+  const randomRoom = roomList[index];
+  roomList.splice(index, 1);
+  return randomRoom;
 }
