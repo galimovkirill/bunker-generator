@@ -18,8 +18,7 @@ function setContent(person) {
   const item = person();
 
   let content = `
-    * Общие данные: ${item.sex}, ${item.age} \r\n
-    * Сексуальная ориентация: ${item.childFree}, ${item.orientation} \r\n
+    * Общие данные: ${item.sex}, ${item.age}, ${item.childFree}, ${item.orientation} \r\n
     * Профессия: ${item.job} \r\n
     * Состояние здоровья: ${item.health} \r\n
     * Черта характера: ${item.character} \r\n
