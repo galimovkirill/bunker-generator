@@ -29,18 +29,18 @@ function getRandomPerson() {
 
 // Tabs switcher
 (function () {
-  const tabLinks = document.querySelectorAll(".generation_links__item");
-  const tabItems = document.querySelectorAll(".generation_tabs__item");
-  tabLinks.forEach((link) => {
+  const TAB_LINKS = document.querySelectorAll(".generation_links__item");
+  const TAB_ITEMS = document.querySelectorAll(".generation_tabs__item");
+  TAB_LINKS.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
 
-      tabLinks.forEach((item) => {
+      TAB_LINKS.forEach((item) => {
         item.classList.remove("active-link");
       });
       link.classList.add("active-link");
 
-      tabItems.forEach((tab) => {
+      TAB_ITEMS.forEach((tab) => {
         tab.classList.remove("shown");
         if (tab.dataset.tab === e.target.dataset.tab) {
           tab.classList.add("shown");
@@ -59,7 +59,7 @@ function getRandomPerson() {
     e.preventDefault();
     const FILES_COUNT = +COUNTER.value;
 
-    for (let i = 0; i < FILES_COUNT; i++) {
+    for (let i = 1; i <= FILES_COUNT; i++) {
       let CONTENT = setContent(getRandomPerson);
       downloadFile(`Бункер_${i}.txt`, CONTENT);
     }
@@ -78,13 +78,13 @@ function getRandomPerson() {
     e.preventDefault();
     const FILES_COUNT = COUNTER.value;
 
-    for (let i = 0; i < FILES_COUNT; i++) {
+    for (let i = 1; i <= FILES_COUNT; i++) {
       const PERSON = getRandomPerson();
       const CHARACTER_TYPE = SELECT[SELECT.selectedIndex].text;
       const NEW_CHARACTER = PERSON[SELECT.value];
 
       downloadFile(
-        `Характеристика_${i}`,
+        `${CHARACTER_TYPE.toUpperCase()}_${i}`,
         `Ваша новая характеристика «${CHARACTER_TYPE.toUpperCase()}» - ${NEW_CHARACTER}`
       );
     }
