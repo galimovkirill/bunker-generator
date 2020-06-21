@@ -88,20 +88,17 @@ function getRandomAction() {
 
 function getRandomOrientation() {
   const index = selfRandom(1, 100);
-  if (index < 2) {
+  if (index < 5) {
     return orientationList[1];
   }
-  if (index >= 2 && index < 4) {
+  if (index >= 5 && index < 12) {
     return orientationList[2];
   }
-  if (index >= 4 && index < 6) {
+  if (index >= 12 && index < 15) {
     return orientationList[3];
   }
-  if (index >= 6 && index < 8) {
+  if (index >= 15 && index < 18) {
     return orientationList[4];
-  }
-  if (index >= 8 && index < 10) {
-    return orientationList[5];
   } else {
     return orientationList[0];
   }
